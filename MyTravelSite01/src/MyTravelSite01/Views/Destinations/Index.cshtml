@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<MyTravelSite01.Models.Destination>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Destinations Index</title>
+</head>
+<body>
+    <h2>Where I've been</h2>
+    <h4>@Html.DisplayNameFor(model => model.Name)</h4>
+    <ul>
+        @foreach(var destination in Model)
+        {
+            <li>@Html.DisplayFor(modelItem => destination.Name)</li>
+
+        }
+    </ul>
+</body>
+</html>
