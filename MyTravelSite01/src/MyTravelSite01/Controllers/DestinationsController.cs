@@ -14,5 +14,10 @@ namespace MyTravelSite01.Controllers
         {
             return View(db.Destinations.ToList());
         }
+        public IActionResult Details(int searchId)
+        {
+            Destination selectedDestination = db.Destinations.FirstOrDefault(x => x.Id == searchId);
+            return View(selectedDestination);
+        }
     }
 }
