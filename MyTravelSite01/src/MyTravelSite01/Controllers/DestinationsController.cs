@@ -14,9 +14,9 @@ namespace MyTravelSite01.Controllers
         {
             return View(db.Destinations.ToList());
         }
-        public IActionResult Details(int searchId)
+        public IActionResult Details(int id)
         {
-            Destination selectedDestination = db.Destinations.FirstOrDefault(x => x.Id == searchId);
+            Destination selectedDestination = db.Destinations.FirstOrDefault(x => x.Id == id);
             return View(selectedDestination);
         }
     }

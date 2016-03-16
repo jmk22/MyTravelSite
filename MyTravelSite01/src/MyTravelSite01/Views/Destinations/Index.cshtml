@@ -11,11 +11,11 @@
 </head>
 <body>
     <h2>Where I've been</h2>
-    <h4>@Html.DisplayNameFor(model => model.Name)</h4>
+    <h4>@Html.DisplayNameFor(m => m.Name)</h4>
     <ul>
         @foreach(var destination in Model)
         {
-            <li>@Html.DisplayFor(modelItem => destination.Name)</li>
+            <li>@Html.DisplayFor(modelItem => destination.Name) | @Html.ActionLink("Details", "Details", new { id = destination.Id })</li>
 
         }
     </ul>
