@@ -7,6 +7,7 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Data.Entity;
 
 namespace MyTravelSite01
 {
@@ -21,6 +22,7 @@ namespace MyTravelSite01
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddEntityFramework().AddSqlServer().AddDbContext<MyTravelsContext>(options => options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
         }
 
         public void Configure(IApplicationBuilder app)
